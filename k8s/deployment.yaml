@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-vite-app
+  labels:
+    app: react-vite-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-vite-app
+  template:
+    metadata:
+      labels:
+        app: react-vite-app
+    spec:
+      containers:
+      - name: react-vite-app
+        # Jenkins will inject the proper ECR image tag here
+        image: REPLACE_WITH_ECR_URI/react-vite-app:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
