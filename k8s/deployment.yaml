@@ -17,7 +17,7 @@ spec:
       containers:
       - name: react-vite-app
         # Jenkins will inject the proper ECR image tag here
-        image: 957411488827.dkr.ecr.ap-south-1.amazonaws.com/react-vite-app:25
+        image: 957411488827.dkr.ecr.ap-south-1.amazonaws.com/react-vite-app:26
         ports:
         - containerPort: 80
         imagePullPolicy: Always
